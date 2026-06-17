@@ -1,14 +1,16 @@
 import {createRouter, createWebHistory} from "vue-router"
 import RegisterView from "./views/RegisterView.vue"
 import LoginView from "./views/LoginView.vue"
+import HomeView from "./views/HomeView.vue"
 
 const routes=[
     {
         path: '/',
-        redirect: '/login'
+        redirect: '/home'
     },
     {path: '/register', component: RegisterView, meta: {title: 'Create Account'}},
-    {path: '/login', component: LoginView, meta: {title: 'Sign In'}}
+    {path: '/login', component: LoginView, meta: {title: 'Sign In'}},
+    {path: '/home', component: HomeView, meta: {title: 'Users'}}
 ]
 
 const router=createRouter({

@@ -3,21 +3,16 @@ import {AppError} from "../utils/AppError.js";
 
 export const authenticate=(req, res, next) => {
     try {
-        const authHeader=req.headers.authorization
-        if (!authHeader) {
-            throw new AppError(401, "UNAUTHORIZED",
-                "Authorization header is missing")
-        }
+        const cookieToken=req.cookies?.accessTokens
 
-        const token=authHeader.split(" ")[1];
-
-        if (!token) {
+        if (!cookieToken) {
             throw new AppError(401, "UNAUTHORIZED",
                 "Access token is missing")
         }
 
+
         try {
-            const payload=verifyAccessToken(token)
+            const payload=verifyAccessToken(cookieToken)
 
             req.user={
                 userId: payload.userId,
