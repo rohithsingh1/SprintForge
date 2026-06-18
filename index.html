@@ -1,48 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link href="styles.css" rel="stylesheet" />
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+</head>
 
-    <body>
-        <div id="vue-app">
-            <!-- <h1>{{name}}</h1>
-            <p>{{ greet('afternoon') }}</p>
-            <a v-bind:href="website">Vuejs 2 Tutorial</a>
-            <p v-html="websiteTag"></p>
-            <button v-on:click.once="AddAge(1)">Add a year</button>
-            <button v-on:click="SubtractAge(1)">Subtract a year</button>
-            <button v-on:dblclick="AddAge(10)">Add a year</button>
-            <button v-on:dblclick="SubtractAge(10)">Subtract a year</button>
-            <p>My Age {{age}}</p> -->
-            <!-- <div id="canvas" v-on:mousemove="UpdateXY">{{x}}, {{y}}</div> -->
-            <!-- <a v-bind:href="website" v-on:click.prevent="clickAnchorTag">Vuejs 2 Tutorial</a>
-            <h1>Keyboard events</h1> -->
-            <!-- <label>Name:</label>
-            <input type="text" v-on:keyup.enter="logName" />
-            <label>Age:</label>
-            <input type="number" v-on:keyup.ctrl.enter="logAge" /> -->
-            <!-- <label>Name:</label>
-            <input type="text" v-model="InputName" v-on:keyup.enter="logName" />
-            <label>Age:</label>
-            <input type="number" v-model="InputAge" v-on:keyup.ctrl.enter="logAge" />
-            <p>Input Name {{InputName}}</p>
-            <p>Input Age {{InputAge}}</p> -->
+<body>
+    <div id="vue-app">
+        <h1>{{name}}</h1>
+        <p>{{ greet('afternoon') }}</p>
+        <a v-bind:href="website">Vuejs 2 Tutorial</a>
+        <p v-html="websiteTag"></p>
+        <button v-on:click.once="AddAge(1)">Add a year</button>
+        <button v-on:click="SubtractAge(1)">Subtract a year</button>
+        <button v-on:dblclick="AddAge(10)">Add a year</button>
+        <button v-on:dblclick="SubtractAge(10)">Subtract a year</button>
+        <p>My Age {{age}}</p>
+        <!-- <div id="canvas" v-on:mousemove="UpdateXY">{{x}}, {{y}}</div> -->
+        <a v-bind:href="website" v-on:click.prevent="clickAnchorTag">Vuejs 2 Tutorial</a>
+        <h1>Keyboard events</h1>
+        <label>Name:</label>
+        <input type="text" v-on:keyup.enter="logName" />
+        <label>Age:</label>
+        <input type="number" v-on:keyup.ctrl.enter="logAge" />
+        <label>Name:</label>
+        <input type="text" v-model="InputName" v-on:keyup.enter="logName" />
+        <label>Age:</label>
+        <input type="number" v-model="InputAge" v-on:keyup.ctrl.enter="logAge" />
+        <p>Input Name {{InputName}}</p>
+        <p>Input Age {{InputAge}}</p>
 
-            <h1>Computed Properties</h1>
-            <button v-on:click="a++">Add to A</button>
-            <button v-on:click="b++">Add to B</button>
-            <p>A - {{ a }}</p>
-            <p>B - {{ b }}</p>
-            <p>Age + A = {{ addToA }}</p>
-            <p>Age + B = {{ addToB }}</p>
+        <h1>Computed Properties</h1>
+        <button v-on:click="a++">Add to A</button>
+        <button v-on:click="b++">Add to B</button>
+        <p>A - {{ a }}</p>
+        <p>B - {{ b }}</p>
+        <p>Age + A = {{ addToA }}</p>
+        <p>Age + B = {{ addToB }}</p>
+
+
+        <h1>Dynamic Classes and Styles</h1>
+        <div v-on:click="DynamicClass" v-bind:class="computedClasses">
+            <span>Rohith</span>
         </div>
-        <script src="app.js"></script>
-    </body>
+
+
+        <h1>Conditional Rendering</h1>
+        <button v-on:click="isAvailable = !isAvailable">
+            Toggle Availability
+        </button>
+        <button v-on:click="isNearby = !isNearby">
+            Toggle Nearby
+        </button>
+        <p v-if="isAvailable">You are available</p>
+        <p v-else-if="isNearby">You are not available but you are nearby</p>
+        <p v-else>You are not available and you are not nearby</p>
+
+
+        <h1>Looping through lists</h1>
+        <ul>
+            <li v-for="character in characters" :key="character">
+                {{ character }}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(ninja,index) in ninjas" :key="ninja.name">
+                {{ index }} - {{ ninja.name }} - {{ ninja.age }}
+            </li>
+        </ul>
+
+    </div>
+    <h1>Multiple Vue instances</h1>
+    <div id="vue-app-one">
+        <h1>{{ title }}</h1>
+        <greeting></greeting>
+
+        <input type="text" ref="nameInput" placeholder="Enter your name" />
+        <button v-on:click="submitName">Submit</button>
+        <p>{{name}}</p>
+    </div>
+    <div id="vue-app-two">
+        <h1>{{ title }}</h1>
+        <button v-on:click="changeOneTitle">Change Title</button>
+        <greeting></greeting>
+    </div>
+    <script src="app.js"></script>
+</body>
 
 </html>
