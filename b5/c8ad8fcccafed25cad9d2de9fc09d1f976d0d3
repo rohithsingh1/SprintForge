@@ -1,0 +1,16 @@
+app.js
+  h_b23a6a8439c0dd 1-14,28-35,62-66,76-81,84-96,98-109
+index.html
+  h_b23a6a8439c0dd 11,36,43-48,50-91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "b5c8ad8fcccafed25cad9d2de9fc09d1f976d0d3",
+  "prompts": {},
+  "humans": {
+    "h_b23a6a8439c0dd": {
+      "author": "unknown"
+    }
+  }
+}
