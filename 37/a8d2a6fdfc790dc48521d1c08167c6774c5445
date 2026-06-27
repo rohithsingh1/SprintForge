@@ -1,0 +1,14 @@
+vue_cli/.gitignore
+  h_54cb620386ff55 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "37a8d2a6fdfc790dc48521d1c08167c6774c5445",
+  "prompts": {},
+  "humans": {
+    "h_54cb620386ff55": {
+      "author": "rohithsingh1 <rohithsinghthakur3@gmail.com>"
+    }
+  }
+}
