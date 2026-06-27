@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <hello-world></hello-world>
+    <!-- <hello-world></hello-world> -->
     <!-- <app-header></app-header>
     <todo-list /> -->
+    <github-users-list></github-users-list>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import AppHeader from './components/Header.vue'
-// import Footer from './components/Footer.vue'
-import TodoList from './components/TodoList.vue';
+// import HelloWorld from './components/HelloWorld.vue'
+// import AppHeader from './components/Header.vue'
+// // import Footer from './components/Footer.vue'
+// import TodoList from './components/TodoList.vue';
+import GithubUsersList from "./task_github_user_card/HomePage.vue"
 
 
 export default {
@@ -18,7 +20,8 @@ export default {
   components: {
     // AppHeader,
     // TodoList,
-    HelloWorld
+    // HelloWorld,
+     GithubUsersList
   },
   data() {
     return {
