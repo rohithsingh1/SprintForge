@@ -1,0 +1,14 @@
+vue_cli/hello-world/src/task_github_user_card/HomePage.vue
+  h_54cb620386ff55 9,11-12,17-18,21,25,30,41-43,50-55,62-63,69-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "0c0166257232b57de7c99c8b21e2a83e9e828778",
+  "prompts": {},
+  "humans": {
+    "h_54cb620386ff55": {
+      "author": "rohithsingh1 <rohithsinghthakur3@gmail.com>"
+    }
+  }
+}
