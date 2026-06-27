@@ -1,0 +1,20 @@
+vue_cli/hello-world/src/App.vue
+  h_54cb620386ff55 6-7,16-17,26-27
+vue_cli/hello-world/src/task_1_github_user_card/HomePage.vue
+  h_54cb620386ff55 1-215
+vue_cli/hello-world/src/task_2_github_debounced_search/HomePage.vue
+  h_54cb620386ff55 1-519
+vue_cli/hello-world/src/task_2_github_debounced_search/debounceCustomHook.js
+  h_54cb620386ff55 1-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "42b07d9e76e1358acf3304361fd8de09926fb96d",
+  "prompts": {},
+  "humans": {
+    "h_54cb620386ff55": {
+      "author": "rohithsingh1 <rohithsinghthakur3@gmail.com>"
+    }
+  }
+}
