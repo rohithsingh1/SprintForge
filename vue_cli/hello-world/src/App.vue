@@ -3,7 +3,8 @@
     <!-- <hello-world></hello-world> -->
     <!-- <app-header></app-header>
     <todo-list /> -->
-    <github-users-list></github-users-list>
+    <!-- <github-users-list></github-users-list> -->
+    <github-debounced-search-users></github-debounced-search-users>
   </div>
 </template>
 
@@ -12,7 +13,8 @@
 // import AppHeader from './components/Header.vue'
 // // import Footer from './components/Footer.vue'
 // import TodoList from './components/TodoList.vue';
-import GithubUsersList from "./task_github_user_card/HomePage.vue"
+//import GithubUsersList from "./task_1_github_user_card/HomePage.vue"
+import GithubDebouncedSearchUsers from "./task_2_github_debounced_search/HomePage.vue"
 
 
 export default {
@@ -21,7 +23,8 @@ export default {
     // AppHeader,
     // TodoList,
     // HelloWorld,
-     GithubUsersList
+    // GithubUsersList,
+    GithubDebouncedSearchUsers
   },
   data() {
     return {
