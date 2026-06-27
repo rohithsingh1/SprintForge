@@ -6,30 +6,28 @@
                 <h1>GitHub Users List</h1>
             </div>
 
-            <div v-if="loading">
+            <template v-if="loading">
                 <div class="loading">Loading.....</div>
-            </div>
-            <div v-else-if="isError">
+            </template>
+            <template v-else-if="isError">
                 <div class="error">
                     <p>Some thing went wrong</p>
                     <button @click="fetchUsers">Try Again</button>
                 </div>
-            </div>
-            <div v-else>
+            </template>
+            <template v-else>
                 <div class="usersList">
-                    <div v-for="user in usersList" :key="user.id">
-                        <div class="userCard">
-                            <img :src="user.avatar_url" :alt="`${user.login} avatar`" />
-                            <div class="userInfo">
-                                <h2>{{ user.login }}</h2>
-                                <a :href="user.html_url" target="_blank" rel="noopener noreferrer">
-                                    Profile url
-                                </a>
-                            </div>
+                    <div v-for="user in usersList" :key="user.id" class="userCard">
+                        <img :src="user.avatar_url" :alt="`${user.login} avatar`" loading="lazy" />
+                        <div class="userInfo">
+                            <h2>{{ user.login }}</h2>
+                            <a :href="user.html_url" target="_blank" rel="noopener noreferrer">
+                                View {{ user.login }}'s profile
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
+            </template>
         </main>
     </section>
 </template>
@@ -40,28 +38,37 @@ export default {
     data: function () {
         return {
             usersList: [],
-            isError: '',
-            loading: false
+            isError: false,
+            loading: false,
+            controller: null
         }
     },
     methods: {
         fetchUsers: async function () {
             try {
                 this.loading = true
-                const res=await fetch('https://api.github.com/users')
-                const resData=await res.json()
-                console.log('resData>>>>>>', resData)
+                this.controller = new AbortController()
+                const res=await fetch('https://api.github.com/users',{ signal: this.controller.signal })
+                // If API returns 403, 500, etc — no throw, so catch never fires
+                // // Fix:
+                if (!res.ok) throw new Error(`HTTP ${res.status}`)
+                const resData = await res.json()
                 this.loading = false
                 this.usersList = resData   
             } catch (error) {
                 this.loading=false
                 this.isError=true
                 this.usersList = []
+            } finally {
+                this.loading=false
             }
         }
     },
     created: function () {
         this.fetchUsers()
+    },
+    beforeDestroy: function () {
+        this.controller?.abort()
     }
 }
 </script>
