@@ -4,7 +4,8 @@
     <!-- <app-header></app-header>
     <todo-list /> -->
     <!-- <github-users-list></github-users-list> -->
-    <github-debounced-search-users></github-debounced-search-users>
+    <!-- <github-debounced-search-users></github-debounced-search-users> -->
+     <countdown-timer></countdown-timer>
   </div>
 </template>
 
@@ -14,8 +15,8 @@
 // // import Footer from './components/Footer.vue'
 // import TodoList from './components/TodoList.vue';
 //import GithubUsersList from "./task_1_github_user_card/HomePage.vue"
-import GithubDebouncedSearchUsers from "./task_2_github_debounced_search/HomePage.vue"
-
+// import GithubDebouncedSearchUsers from "./task_2_github_debounced_search/HomePage.vue"
+import CountdownTimer from "./task_3_countdown_timer/HomePage.vue";
 
 export default {
   name: 'App',
@@ -24,7 +25,8 @@ export default {
     // TodoList,
     // HelloWorld,
     // GithubUsersList,
-    GithubDebouncedSearchUsers
+    // GithubDebouncedSearchUsers,
+    CountdownTimer
   },
   data() {
     return {
