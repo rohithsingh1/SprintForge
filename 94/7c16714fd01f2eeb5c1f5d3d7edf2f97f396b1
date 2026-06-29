@@ -1,0 +1,20 @@
+vue_cli/hello-world/src/task_3_countdown_timer/HomePage.vue
+  h_54cb620386ff55 1-27
+vue_cli/hello-world/src/task_3_countdown_timer/CountdownTImer.vue
+  h_54cb620386ff55 1-139,141-418
+vue_cli/hello-world/src/App.vue
+  h_54cb620386ff55 7-8,18-19,28-29
+vue_cli/hello-world/src/directives/tooltip.js
+  h_54cb620386ff55 1-185
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "947c16714fd01f2eeb5c1f5d3d7edf2f97f396b1",
+  "prompts": {},
+  "humans": {
+    "h_54cb620386ff55": {
+      "author": "rohithsingh1 <rohithsinghthakur3@gmail.com>"
+    }
+  }
+}
